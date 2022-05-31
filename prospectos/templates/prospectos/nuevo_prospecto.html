@@ -1,0 +1,98 @@
+{% include 'base.html' %}
+{% block content %}
+
+<h1 class="h3  align-middle mb-3 ml-3">Nuevo Prospecto</h1>
+<form method="post">
+  {% csrf_token %}
+
+
+  <div class="row">
+
+    <div class="col-md-3 ml-3">
+
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="">
+
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Apellido Paterno</label>
+        <input type="text" class="form-control" id="apepat" name="apepat" placeholder="">
+
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Apellido Materno</label>
+        <input type="text" class="form-control" id="apemat" name="apemat" placeholder="">
+
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Calle</label>
+        <input type="text" class="form-control" id="calle" name="calle" placeholder="">
+
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Num. Exterior</label>
+        <input type="text" class="form-control" id="num" name="num" placeholder="">
+
+      </div>
+    </div>
+
+    <div class="col-md-3">
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Num. Interior</label>
+        <input type="text" class="form-control" id="" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Colonia</label>
+        <input type="text" class="form-control" id="colonia" name="colonia" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Código Postal</label>
+        <input type="text" class="form-control" id="cp" name="cp" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Teléfono</label>
+        <input type="text" class="form-control" id="tel" name="tel" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">RFC</label>
+        <input type="text" class="form-control" id="rfc" name="rfc" placeholder="">
+      </div>
+
+      <!--  <div class="form-group">
+      <label for="exampleFormControlFile1">Documento</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div> -->
+
+    </div>
+
+
+
+  </div>
+  <div class="ml-3">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a type="button" class="btn btn-default" href="{% url 'prospectos' %}">Regresar</a>
+  </div>
+</form>
+
+
+<br><br>
+
+
+
+
+
+
+{% endblock content %}
+
+
+{% include 'footer.html' %}

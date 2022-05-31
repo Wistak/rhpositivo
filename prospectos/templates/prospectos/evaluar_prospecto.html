@@ -1,0 +1,63 @@
+{% include 'base.html' %}
+{% block content %}
+
+<h1 class="h3  align-middle mb-3 ml-3">Evaluar Prospecto</h1>
+<form method="post">
+  {% csrf_token %}
+
+
+  <div class="row">
+
+    <div class="col-md-3 ml-3">
+
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Nombre</label>
+        <input type="text" class="form-control" id="" name="" placeholder="" value="{{ nombre }}" readonly>
+
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Apellidos</label>
+        <input type="text" class="form-control" id="" name="" placeholder="" value="{{ apellidos }}" readonly>
+
+      </div>
+      <div class="form-group">
+
+      {{ form.estatus }}
+    </div>
+
+
+      
+
+    <div class="col-md-3">
+
+     
+      <!--  <div class="form-group">
+      <label for="exampleFormControlFile1">Documento</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div> -->
+
+    </div>
+
+
+  </div>
+  </div>
+  <div class="ml-3">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a type="button" class="btn btn-default" href="{% url 'prospectos' %}">Regresar</a>
+  </div>
+</form>
+
+
+<br><br>
+
+
+
+
+
+
+{% endblock content %}
+
+
+{% include 'footer.html' %}
