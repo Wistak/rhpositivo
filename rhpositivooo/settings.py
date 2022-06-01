@@ -38,6 +38,8 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 # Application definition
 
 INSTALLED_APPS = [
