@@ -20,6 +20,11 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -27,10 +32,11 @@ STATICFILES_DIRS = [
 SECRET_KEY = 'django-insecure-z)q$)(g&lz(_r9)pw-if)kd+w3%gnj)^eg*)^r3v0nd7)+digh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Application definition
 
@@ -42,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'prospectos',
-    'bootstrap_modal_forms'
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

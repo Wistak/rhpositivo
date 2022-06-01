@@ -15,6 +15,8 @@ def prospectos(request):
 
 def nuevoProspecto(request):
     form = NuevoProspecto(request.POST)
+    print(request.POST)
+
     if form.is_valid():
         print("valido")
         form.save()
@@ -31,16 +33,18 @@ def evaluarProspecto (request, pk):
     prospecto = Prospecto.objects.get(id=pk)
     nombre = prospecto.nombre
     apellidos = prospecto.apepat + ' ' + prospecto.apemat
+    observaciones = prospecto.observaciones
     form = EvaluarProspecto(instance=prospecto)
 
     if request.method == 'POST':
         estatus_obj = Estatus.objects.get(id=request.POST['estatus'])
+        observaciones_post = request.POST['observaciones']
         form = EvaluarProspecto(request.POST, instance=estatus_obj)
         if form.is_valid():
-            Prospecto.objects.filter(pk=pk).update(estatus=estatus_obj)
+            Prospecto.objects.filter(pk=pk).update(estatus=estatus_obj, observaciones=observaciones_post)
             return redirect('/prospectos')
     
     estatuses = Estatus.objects.all()
 
-    context = {'form':form, 'estatus': estatuses, 'nombre': nombre, 'apellidos': apellidos}
+    context = {'form':form, 'estatus': estatuses, 'nombre': nombre, 'apellidos': apellidos, 'observaciones': observaciones}
     return render(request, 'prospectos/evaluar_prospecto.html', context)

@@ -26,8 +26,9 @@ class EvaluarProspecto(forms.ModelForm):
     ]
 
     estatus = forms.CharField(label='Estatus: ', widget=forms.Select(choices=ESTATUS_CHOICES))
+    observaciones = forms.CharField(label='Observaciones: ', widget=forms.Textarea, required=False)
 
     class Meta:
         model = Prospecto
-        fields = ['estatus',]
+        fields = ['estatus', 'observaciones']
 

@@ -1,5 +1,6 @@
 {% include 'base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <h1 class="h3  align-middle mb-3 ml-3">Evaluar Prospecto</h1>
 <form method="post">
@@ -12,19 +13,19 @@
 
 
       <div class="form-group">
-        <label for="exampleFormControlInput1">Nombre</label>
-        <input type="text" class="form-control" id="" name="" placeholder="" value="{{ nombre }}" readonly>
+        <label for="exampleFormControlInput1">Nombre:</label>
+        <input type="text" class="form-control" id="" name="" placeholder="" value="{{ nombre }}" disabled>
 
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlInput1">Apellidos</label>
-        <input type="text" class="form-control" id="" name="" placeholder="" value="{{ apellidos }}" readonly>
+        <label for="exampleFormControlInput1">Apellidos:</label>
+        <input type="text" class="form-control" id="" name="" placeholder="" value="{{ apellidos }}" disabled>
 
       </div>
       <div class="form-group">
-
-      {{ form.estatus }}
+      {{ form.estatus|as_crispy_field }}
+      {{ form.observaciones|as_crispy_field }}
     </div>
 
 
