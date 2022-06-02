@@ -28,6 +28,7 @@
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellidos</th>
                             <th scope="col">Estatus</th>
+                            <th style="width: 3%;" scope="col">Documento</th>
                             <th style="width: 10%;" scope="col">Evaluar</th>
                         </tr>
                     </thead>
@@ -37,6 +38,7 @@
                         <td> {{ prospecto.nombre }} </td>           
                         <td> {{ prospecto.apepat }} {{ " " }} {{ prospecto.apemat }} </td>           
                         <td> {{ prospecto.estatus }} </td>  
+                        <td style="width: 5%;"> <a href="media/{{prospecto.documento}}" download> {{ prospecto.documento }} </a> </td>  
                         <td style="text-align: center;"> <a class="btn btn-warning" value="{{ prospecto.id }}" href="{% url 'evaluar_prospecto' prospecto.id  %}"><i class="fas fa-edit"></i></a>   </td>  
                       </tr>
                         {% endfor %}

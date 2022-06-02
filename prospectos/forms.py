@@ -12,6 +12,7 @@ class NuevoProspecto(forms.ModelForm):
     cp = forms.CharField()
     tel = forms.CharField()
     rfc = forms.CharField()
+    documento = forms.FileField(required=False)
 
     class Meta:
         model = Prospecto

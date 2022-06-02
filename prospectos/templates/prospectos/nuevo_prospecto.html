@@ -1,8 +1,9 @@
 {% include 'base.html' %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <h1 class="h3  align-middle mb-3 ml-3">Nuevo Prospecto</h1>
-<form method="post">
+<form method="POST" enctype="multipart/form-data">
   {% csrf_token %}
 
 
@@ -35,18 +36,13 @@
 
       </div>
       <div class="form-group">
-        <label for="exampleFormControlInput1">Num. Exterior</label>
+        <label for="exampleFormControlInput1">Num.</label>
         <input type="text" class="form-control" id="num" name="num" placeholder="">
 
       </div>
     </div>
 
     <div class="col-md-3">
-
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Num. Interior</label>
-        <input type="text" class="form-control" id="" placeholder="">
-      </div>
 
       <div class="form-group">
         <label for="exampleFormControlInput1">Colonia</label>
@@ -67,28 +63,25 @@
         <label for="exampleFormControlInput1">RFC</label>
         <input type="text" class="form-control" id="rfc" name="rfc" placeholder="">
       </div>
-
-      <!--  <div class="form-group">
-      <label for="exampleFormControlFile1">Documento</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </div> -->
+      <div class="form-group">
+        {{ form.documento|as_crispy_field }}
+      </div>
 
     </div>
 
 
 
   </div>
+
   <div class="ml-3">
     <button type="submit" class="btn btn-primary">Guardar</button>
     <a type="button" class="btn btn-default" href="{% url 'prospectos' %}">Regresar</a>
   </div>
+
 </form>
 
 
 <br><br>
-
-
-
 
 
 
